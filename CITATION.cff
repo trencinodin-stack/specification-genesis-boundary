@@ -6,7 +6,6 @@ authors:
   - family-names: "Tuohy"
     given-names: "Jesse"
     alias: "trencinodin-stack"
-    affiliation: "Arcstone Adaptive Science Systems, Inc."
 repository-code: "https://github.com/trencinodin-stack/specification-genesis-boundary"
 url: "https://admissibilityscience.com"
 license:

@@ -18,7 +18,6 @@ subject:
   name: "specification-genesis-boundary"
   publisher_aliases:
     - "trencinodin-stack"
-    - "Arcstone Adaptive Science Systems, Inc."
 
 contract_binding:
   subject_revision: "b692e1686a5aa29246f9acfede57503451bffc73"
