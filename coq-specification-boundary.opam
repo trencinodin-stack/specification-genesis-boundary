@@ -1,0 +1,19 @@
+opam-version: "2.0"
+name: "coq-specification-boundary"
+version: "0.1.0"
+synopsis: "Axiom-free Coq 8.18.0 formalization of the specification-genesis boundary and multi-axis evidence admission policy"
+maintainer: "trencinodin-stack"
+authors: ["trencinodin-stack"]
+license: "MIT OR Apache-2.0"
+homepage: "https://github.com/trencinodin-stack/specification-genesis-boundary"
+bug-reports: "https://github.com/trencinodin-stack/specification-genesis-boundary/issues"
+dev-repo: "git+https://github.com/trencinodin-stack/specification-genesis-boundary.git"
+build: [
+  [make "-j%{jobs}%"]
+]
+run-test: [
+  [make "verify"]
+]
+depends: [
+  "coq" {= "8.18.0"}
+]
