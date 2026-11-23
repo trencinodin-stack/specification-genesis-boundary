@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: coqorg/coq:8.18.0
+      options: --user 0
     steps:
       - uses: actions/checkout@v4
       - name: Build and verify all Coq proofs and assumption gates
