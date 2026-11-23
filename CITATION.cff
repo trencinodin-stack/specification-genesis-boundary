@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+title: "specification-genesis-boundary: Axiom-Free Coq 8.18.0 Formalization of the Specification-Genesis Boundary and Multi-Axis Evidence Admission Policy"
+message: "If you use this Coq formalization or differential policy suite in academic or systems-engineering work, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Tuohy"
+    given-names: "Jesse"
+    alias: "trencinodin-stack"
+    affiliation: "Arcstone Adaptive Science Systems, Inc."
+repository-code: "https://github.com/trencinodin-stack/specification-genesis-boundary"
+url: "https://admissibilityscience.com"
+license:
+  - "MIT"
+  - "Apache-2.0"
+version: "0.1.0"
+date-released: "2026-11-23"
+keywords:
+  - "coq"
+  - "formal-verification"
+  - "specification-genesis-boundary"
+  - "autoformalization"
+  - "epistemic-non-laundering"
+  - "proof-carrying-code"
+references:
+  - type: book
+    authors:
+      - family-names: "Boehm"
+        given-names: "Barry W."
+    title: "Software Engineering Economics"
+    publisher:
+      name: "Prentice-Hall"
+    year: 1981
+  - type: article
+    authors:
+      - family-names: "Hardy"
+        given-names: "Norman"
+    title: "The Confused Deputy: (or why capabilities might have been invented)"
+    journal: "ACM SIGOPS Operating Systems Review"
+    volume: 22
+    issue: 4
+    start: 36
+    end: 38
+    year: 1988
+  - type: conference-paper
+    authors:
+      - family-names: "Necula"
+        given-names: "George C."
+    title: "Proof-Carrying Code"
+    collection-title: "Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL '97)"
+    start: 106
+    end: 119
+    year: 1997
+  - type: article
+    authors:
+      - family-names: "Zave"
+        given-names: "Pamela"
+      - family-names: "Jackson"
+        given-names: "Michael"
+    title: "Four Dark Corners of Requirements Engineering"
+    journal: "ACM Transactions on Software Engineering and Methodology (TOSEM)"
+    volume: 6
+    issue: 1
+    start: 1
+    end: 30
+    year: 1997

@@ -29,6 +29,8 @@ contract_binding:
     - "README.md"
     - "llms.txt"
     - "AGENTS.md"
+    - "SECURITY.md"
+    - "CITATION.cff"
 
 conflict_rule: "fail_closed"
 
