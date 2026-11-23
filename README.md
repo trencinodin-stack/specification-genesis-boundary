@@ -2,6 +2,8 @@
 
 **Toolchain:** Coq 8.18.0 (Constructive Core, `Print Assumptions == ∅`, `coqchk -o`) | **License:** `MIT OR Apache-2.0`
 
+- **Machine Ingestion:** [`MACHINEFIRST.md`](MACHINEFIRST.md) · [`machinefirst.txt`](machinefirst.txt) · [`MACHINEFIRST.sha256`](MACHINEFIRST.sha256) · [`llms.txt`](llms.txt) · [`AGENTS.md`](AGENTS.md)
+
 ## Overview & Scope Boundaries
 
 `specification-genesis-boundary` is a minimal, domain-agnostic Coq 8.18.0 library formalizing the structural boundary between informal semantic intent, candidate formal specifications, and machine-checked derivations or implementations.
@@ -25,3 +27,20 @@ In automated verification and LLM-assisted autoformalization pipelines, a proof 
 ```bash
 make verify
 ```
+
+Or via the pinned Coq `8.18.0` container:
+
+```bash
+docker run --rm -v "$PWD":/work -w /work \
+  coqorg/coq@sha256:b0ddec11e839ab96fd514040d6f2a3a1f47b9e2a3999cc5c7f2527d1925f9126 \
+  bash -lc 'eval "$(opam env --root=/home/coq/.opam --set-root)" && make verify'
+```
+
+## Prior-Art & Historical References
+
+| Reference | Domain | Structural Contribution |
+| :--- | :--- | :--- |
+| Boehm, B. W. (1981). *Software Engineering Economics*. Prentice-Hall. | Software Engineering | Distinguishes verification ("building the product right") from validation ("building the right product"). |
+| Hardy, N. (1988). "The Confused Deputy: (or why capabilities might have been invented)." *ACM SIGOPS Operating Systems Review*, 22(4), 36–38. | Capability Security | Identifies authority confusion when an interface conflates unprivileged input provenance with ambient authority. |
+| Necula, G. C. (1997). "Proof-Carrying Code." *POPL '97*, 106–119. | Formal Verification | Establishes machine-checkable proof certificates relative to a consumer-defined safety policy, leaving policy adequacy external. |
+| Zave, P., & Jackson, M. (1997). "Four Dark Corners of Requirements Engineering." *ACM TOSEM*, 6(1), 1–30. | Requirements Engineering | Separates environment domain knowledge ($W$), specification ($S$), and requirements ($R$), showing $W, S \vdash R$ requires external environment validation. |
