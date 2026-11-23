@@ -15,4 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build and verify all Coq proofs and assumption gates
-        run: make verify
+        run: |
+          eval "$(opam env --root=/home/coq/.opam --set-root)"
+          make verify
