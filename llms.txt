@@ -1,0 +1,32 @@
+# specification-genesis-boundary
+
+> Minimal, domain-agnostic Coq 8.18.0 formalization of the structural boundary between informal semantic intent, candidate formal specifications, and machine-checked derivations or implementations (`Print Assumptions == ∅`, `coqchk -o`, `MIT OR Apache-2.0`).
+
+This repository provides constructive, axiom-free Coq 8.18.0 models demonstrating why mechanical proof checking of a formal specification does not by itself establish real-world semantic adequacy, and how multi-axis evidence admission prevents epistemic laundering.
+
+## Core Formal Theories (`theories/`)
+
+- [theories/Boundary.v](theories/Boundary.v): Defines observation-limited indistinguishability (`indistinguishable_inputs_force_error`) and conditional assurance transfer (`assurance_requires_semantic_fidelity`) across abstract requirement, observation, specification, and world types.
+- [theories/EvidencePolicy.v](theories/EvidencePolicy.v): Defines `ClaimRecord` and the deterministic admission predicate `admissible_claim`, proving `no_epistemic_laundering`, `formal_proof_preserved_when_scoped`, and `spec_mutation_invalidates_adequacy`.
+- [theories/Countermodels.v](theories/Countermodels.v): Provides a constructive finite countermodel (`checked_spec_can_misrepresent_intent`) showing a syntactically accepted specification can violate semantic fidelity under lossy observation.
+- [theories/Ledger.v](theories/Ledger.v): Provides section-parameterized trust accounting (`end_to_end_ledger_accounting`) that closes with zero global axioms while exposing `conforms` and `faithful` as explicit theorem premises.
+
+## Verification & Differential Parity Harness (`tests/`)
+
+- [tests/AuditAssumptions.v](tests/AuditAssumptions.v): Verifies the generalized type signature of `end_to_end_ledger_accounting` and runs `Print Assumptions` across all 7 exported theorems.
+- [tests/RejectPromotion.v](tests/RejectPromotion.v): Negative (`Fail Definition`) and paired positive (`Example ... := eq_refl`) controls verifying that proof-checking cannot promote unattested or self-attested `IntentAdequacy` claims.
+- [tests/ExportVectors.v](tests/ExportVectors.v): Evaluates canonical policy vectors `VEC-01` through `VEC-08` via `Compute` for differential parity testing.
+
+## Build & Package Metadata
+
+- [Makefile](Makefile): Orchestrates `coq_makefile` compilation, forbidden-keyword grep checks (`Admitted`, `Axiom`, `Conjecture`, `Parameter`), `coqchk -o`, and the 7-theorem `Closed under the global context` CI gate via `make verify`.
+- [_CoqProject](_CoqProject): Maps `theories` to `GenesisBoundary` and `tests` to `GenesisBoundaryTests`.
+- [coq-specification-boundary.opam](coq-specification-boundary.opam): OPAM 2.0 package definition pinned to `coq {= "8.18.0"}`.
+- [.github/workflows/coq.yml](.github/workflows/coq.yml): GitHub Actions CI pipeline executing `make verify` inside `coqorg/coq:8.18.0`.
+
+## Explicit Scope Exclusions
+
+- Does not solve the genesis problem or certify real-world semantic adequacy.
+- Assumes soundness of the Coq 8.18.0 kernel and `coqchk` verifier.
+- Makes no statistical or empirical claims about LLM translation accuracy.
+- Provides no executable runtime monitor, resource/timing bounds, or physical actuation enforcement.
